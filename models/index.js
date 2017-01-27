@@ -1,17 +1,13 @@
-const Sequelize = require('sequelize');
-const db = new Sequelize('postgress://localhost:5432/tripplanner', {logging: false});
+const db = require('./_db')
 
-const Place = db.define('place', {
-  addres: {
-    type: Sequelize.STRING,
-    allowNull: false
-  },
-  city: {
-    type: Sequelize.STRING,
-    allowNull: false
-  },
-  state: {
-    type: Sequelize.STRING,
-    allowNull: false
-  }
-})
+const Place = require('./place.js')
+const Restaurant = require('./restaurant')
+const Activity = require('./activity')
+const Hotel = require('./hotel')
+
+Hotel.belongsTo(Place)
+Activity.belongsTo(Place)
+Restaurant.belongsTo(Place)
+
+
+module.exports = db
