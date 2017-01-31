@@ -15,14 +15,15 @@ var dbHotels = Hotel.findAll()
 var dbActivities = Activity.findAll()
 
   Promise.all([dbRestaurants,dbHotels, dbActivities])
-  .then(function (data) {
+  .then(([restaurants, hotels, activities]) => {
     res.render('index', {
-      templateHotels: data[1],
-      templateRestaurants: data[0],
-      templateActivities: data[2]
+      templateHotels: restaurants,
+      templateRestaurants: hotels,
+      templateActivities: activities
     });
   })
   .catch(next);
+
 
 
 });
