@@ -4,8 +4,9 @@
     <title>{% block title %}Trip Planner{% endblock %}</title>
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/stylesheets/style.css" rel="stylesheet">
-
-
+    <script src="/jquery/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCy4JwTdBXqC1qn3wWenMBlUUBxp1L4i-M"></script>
+    <script src="/scripts/map.js"></script>
   </head>
   <body>
   <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
@@ -30,6 +31,36 @@
         </div>
       </div>
     </div>
+    <div class="container-fluid">
+  <div class="row">
+    <div class="col-md-8 no-side-padding">
+    <div id="map"></div>
+    </div>
+
+
+    <div class="col-md-4" id="side-panel">
+      <div class="panel panel-default" id="places">
+
+        <div class="panel-body">
+        {% block places %} {% endblock %}
+        </div>
+      </div>
+      <h3>Day 2</h3>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <button class="btn btn-primary">1</button>
+          <button class="btn btn-primary">2</button>
+          <button class="btn btn-primary">3</button>
+          <button class="btn btn-primary">+</button>
+        </div>
+        <div class="panel-body">
+        {% block itinerary %} {% endblock %}
+        </div>
+      </div>
+    </div>
+
+
+</div>
 
 
     <div class="container content">
@@ -40,3 +71,4 @@
 
   </body>
 </html>
+<!-- api key AIzaSyCy4JwTdBXqC1qn3wWenMBlUUBxp1L4i-M -->

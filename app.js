@@ -24,6 +24,7 @@ var env = nunjucks.configure('views', {noCache: true});
 app.use(express.static('public'));
 app.use('/bootstrap', express.static(path.join(__dirname, '/node_modules/bootstrap/dist')));
 app.use('/jQuery', express.static(path.join(__dirname,'node_modules/jquery/dist')));
+app.use('/scripts', express.static(path.join(__dirname, 'scripts')))
 app.use(routes);
 
 app.use(function(req, res, next) {

@@ -1,29 +1,41 @@
 {% extends "layout.html" %}
 
+{% block places %}
+  <form>
+  <h4>Hotels</h4>
+  <select>
+    {% for hotel in templateHotels %}
+    <option value="{{hotel.id}}">{{hotel.name}}</option>
+    {% endfor %}
+
+  </select>
+  <h4>Restaurants</h4>
+  <select>
+    {% for restaurant in templateRestaurants %}
+    <option value="{{restaurant.id}}">{{restaurant.name}}</option>
+    {% endfor %}
+  </select>
+  <h4>Activities</h4>
+  <select>
+    {% for activity in templateActivities %}
+    <option value="{{activity.id}}">{{activity.name}}</option>
+    {% endfor %}
+  </select>
+  </form>
+{% endblock%}
+
+{% block itinerary %}
+  <form>
+  <h4>Hotel</h4>
+  <li>xxxxxxx</li>
+  <h4>Restaurants</h4>
+  <li>xxxxxxx</li>
+  <h4>Activities</h4>
+ <li>xxxxxxx</li>
+  </form>
+{% endblock %}
+
 {% block content %}
-<div class="container">
-  <div class="row">
-    <div class="col-sm-8" id="map">
-       <h1> MAPPP </h1>
-      </div>
 
-      <div class="col-sm-4">
-        <div class="row">
-          <div class="col-sm-4" id="places">
-            <p>I'm Places</p>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-sm-4" id="itinerary">
-            <p> I'm itinerrrrrry
-          </div>
-
-        </div>
-      </div>
-
-  </div>
-
-</div>
 
 {% endblock %}
